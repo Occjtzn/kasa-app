@@ -1,4 +1,3 @@
-// Variables de police
 $font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 
@@ -11,6 +10,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.page-container {
+  margin: 0 50px;
+}
+
 code {
   font-family: $font-code;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: red;
 }

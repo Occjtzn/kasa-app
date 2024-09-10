@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Home() {
+function Propos() {
   return (
     <div className="App">
-      <h1>Welcome</h1>
+      <h1>Propos</h1>
     </div>
   );
 }
 
-export default Home;
+export default Propos;
