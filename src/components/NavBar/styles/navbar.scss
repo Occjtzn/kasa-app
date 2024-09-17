@@ -1,0 +1,32 @@
+.navbar {
+  height: 68px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.btn-container {
+  display: flex;
+  gap: 30px;
+}
+
+.btn-accueil,
+.btn-about {
+  border: none;
+  background-color: white;
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-accueil:hover,
+.btn-about:hover {
+  color: #ff6060;
+}
+
+.active {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  line-height: 142.6%;
+}
