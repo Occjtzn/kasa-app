@@ -6,22 +6,24 @@
   margin-bottom: 50px;
 }
 
-.btn-container {
+.nav-container {
   display: flex;
   gap: 30px;
 }
 
-.btn-accueil,
-.btn-about {
+.nav-accueil,
+.nav-about {
+  color: black;
   border: none;
-  background-color: white;
   font-size: 24px;
   font-weight: 500;
+  text-decoration: none;
   cursor: pointer;
+  line-height: 142.6%;
 }
 
-.btn-accueil:hover,
-.btn-about:hover {
+.nav-accueil:hover,
+.nav-about:hover {
   color: #ff6060;
 }
 

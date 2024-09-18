@@ -1,0 +1,15 @@
+.about-container {
+  display: flex;
+  margin-bottom: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-img {
+  position: relative;
+  width: 1240px;
+  height: 223px;
+  object-fit: cover;
+  border-radius: 25px;
+  filter: brightness(75%);
+}

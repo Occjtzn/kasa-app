@@ -1,5 +1,5 @@
 import { Logo } from './Logo';
-import { Buttons } from './Buttons';
+import { NavLinks } from './NavLinks';
 import './styles/navbar.scss';
 
 export const NavBar = () => {
@@ -7,7 +7,7 @@ export const NavBar = () => {
     <>
       <div className="navbar">
         <Logo />
-        <Buttons />
+        <NavLinks />
       </div>
     </>
   );

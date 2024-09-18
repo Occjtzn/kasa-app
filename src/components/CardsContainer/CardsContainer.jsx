@@ -10,17 +10,13 @@ export function CardsContainer() {
   }, []);
 
   return (
-    <div className="cards-container">
-      <div className="cards">
-        {cards.map((card) => {
-          return (
-            <div key={cards.id}>
-              <img src={card.cover} alt={cards.title} />
-              <h2 className="card-title">{card.title}</h2>
-            </div>
-          );
-        })}
-      </div>
+    <div className="card-container">
+      {cards.map((card) => (
+        <div className="card" key={card.id}>
+          <img className="card-img" src={card.cover} alt={card.title} />
+          <h2 className="card-title">{card.title}</h2>
+        </div>
+      ))}
     </div>
   );
 }
