@@ -20,11 +20,13 @@
   text-decoration: none;
   cursor: pointer;
   line-height: 142.6%;
-}
-
-.nav-accueil:hover,
-.nav-about:hover {
-  color: #ff6060;
+  transition:
+    transform 350ms,
+    color 300ms;
+  &:hover {
+    transform: scale(1.15);
+    color: #ff6060;
+  }
 }
 
 .active {

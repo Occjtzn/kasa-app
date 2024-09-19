@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
-import ArrowSvg from '../../assets/arrow_back.svg'; // Assure-toi que le chemin est correct
+import ArrowSvg from '../../assets/arrow_back.svg';
 import './styles/drop-down.scss';
 
-const DropDown = () => {
+export const DropDown = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const handleToggle = (index) => {
-    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+    if (openIndex === index) {
+      setOpenIndex(null);
+    } else {
+      setOpenIndex(index);
+    }
   };
 
   const menus = [
     {
       title: 'Fiabilité',
       content:
-        'Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.',
+        'Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.',
     },
     {
       title: 'Respect',
@@ -28,21 +32,22 @@ const DropDown = () => {
     {
       title: 'Sécurité',
       content:
-        "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.",
+        "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'haute qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.",
     },
   ];
 
   return (
     <div className="dropdown-global-container">
       {menus.map((menu, index) => (
-        <div key={index} className="dropdown-section">
+        <div
+          key={index}
+          className={`dropdown-section ${openIndex === index ? 'open' : ''}`}
+        >
           <div className="dropdown-topbar" onClick={() => handleToggle(index)}>
             <span className="dropdown-title">{menu.title}</span>
             <img src={ArrowSvg} alt="arrow" className="dropdown-icon" />
           </div>
-          {openIndex === index && (
-            <div className="dropdown-frame">{menu.content}</div>
-          )}
+          <div className="dropdown-frame">{menu.content}</div>
         </div>
       ))}
     </div>
