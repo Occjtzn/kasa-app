@@ -1,4 +1,4 @@
-import KasaLogo from '../../assets/kasa-logo.webp';
+import KasaLogo from '../../assets/Pictures/kasa-logo.webp';
 
 export const Logo = () => {
   return (

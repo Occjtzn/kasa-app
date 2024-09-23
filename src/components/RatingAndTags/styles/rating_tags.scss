@@ -1,0 +1,36 @@
+.rating-and-tags {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+
+  .rating {
+    display: flex;
+    gap: 5px;
+    img {
+      width: 24px;
+      height: 24px;
+      margin-right: 5px;
+    }
+  }
+
+  .tags {
+    display: flex;
+    gap: 10px;
+  }
+
+  .tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 115px;
+    height: 25px;
+    border-radius: 10px;
+    background: #ff6060;
+    color: #fff;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 450;
+  }
+}

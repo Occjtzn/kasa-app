@@ -1,4 +1,4 @@
-import HeaderImage from '../../assets/header-img.webp';
+import HeaderImage from '../../assets/Pictures/header-img.webp';
 import './styles/header.scss';
 
 export const HeaderLogo = () => {

@@ -1,4 +1,4 @@
-import AboutImage from '../../assets/back-about-img.webp';
+import AboutImage from '../../assets/Pictures/back-about-img.webp';
 import './styles/back_about.scss';
 
 export const AboutLogo = () => {

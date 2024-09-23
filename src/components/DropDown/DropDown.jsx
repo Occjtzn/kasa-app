@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ArrowSvg from '../../assets/arrow_back.svg';
+import ArrowSvg from '../../assets/Svg/arrow_back.svg';
 import './styles/drop-down.scss';
 
 export const DropDown = () => {
@@ -53,5 +53,3 @@ export const DropDown = () => {
     </div>
   );
 };
-
-export default DropDown;

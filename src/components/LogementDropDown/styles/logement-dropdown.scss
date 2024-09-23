@@ -1,63 +1,54 @@
-.dropdown-global-container {
+.logement-dropdown {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 5px;
-  gap: 30px;
+  width: 582px;
   margin-bottom: 30px;
 }
 
-.dropdown-section {
+.logement-dropdown-topbar {
   display: flex;
-  width: 1023px;
-  flex-direction: column;
-}
-
-.dropdown-topbar {
-  display: flex;
-  padding: 10px 20px 10px 15px;
+  padding: 10px 20px 10px 10px;
   background-color: #ff6060;
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   position: relative;
 }
 
-.dropdown-title {
+.logement-dropdown-title {
   color: #fff;
   font-size: 24px;
-  font-style: normal;
   font-weight: 700;
   line-height: 142.6%;
 }
 
-.dropdown-frame {
-  height: 0;
+.logement-dropdown-frame {
+  max-height: 0;
+  width: 570px;
   padding: 0 20px;
-  width: 1018px;
   border-radius: 0 0 5px 5px;
   background: #f6f6f6;
   font-size: 18px;
-  font-style: normal;
   font-weight: 400;
   line-height: 142.6%;
   overflow: hidden;
   transition:
-    height 0.5s ease,
+    max-height 0.5s ease,
     padding 0.5s ease;
 }
 
-.dropdown-section.open .dropdown-frame {
-  height: auto;
-  padding: 20px 20px;
+.logement-dropdown.open .logement-dropdown-frame {
+  max-height: 500px; /* Augmente la hauteur maximale si nécessaire */
+  padding: 20px;
 }
 
-.dropdown-icon {
+.logement-dropdown-icon {
   transition: transform 0.5s ease;
 }
 
-.dropdown-section.open .dropdown-icon {
+.logement-dropdown.open .logement-dropdown-icon {
   transform: rotate(-180deg);
 }

@@ -1,4 +1,4 @@
-import FooterImage from '../../assets/kasa-footer-logo.webp';
+import FooterImage from '../../assets/Pictures/kasa-footer-logo.webp';
 import './styles/footer.scss';
 
 export const FooterLogo = () => {
