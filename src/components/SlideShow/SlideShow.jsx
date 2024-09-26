@@ -17,13 +17,17 @@ export const SlideShow = ({ images }) => {
 
   return (
     <div className="slide-show">
-      <button className="prev-button" onClick={prevSlide}>
-        <img src={PrevVector} alt="Previous" className="previous-icon" />
-      </button>
+      {totalImages > 1 && (
+        <button className="prev-button" onClick={prevSlide}>
+          <img src={PrevVector} alt="Previous" className="previous-icon" />
+        </button>
+      )}
       <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
-      <button className="next-button" onClick={nextSlide}>
-        <img src={NextVector} alt="Next" className="next-icon" />
-      </button>
+      {totalImages > 1 && (
+        <button className="next-button" onClick={nextSlide}>
+          <img src={NextVector} alt="Next" className="next-icon" />
+        </button>
+      )}
       <div className="slide-count">
         {currentIndex + 1} / {totalImages}
       </div>
