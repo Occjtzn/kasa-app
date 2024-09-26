@@ -4,10 +4,8 @@ import Logements from '../datas/logements.json';
 import { FooterLogo } from '../components/Footer/Footer';
 import { NavBar } from '../components/NavBar/NavBar';
 import { SlideShow } from '../components/SlideShow/SlideShow';
-import { LogementDetails } from '../components/LogementDetails/LogementDetails';
-import { RatingAndTags } from '../components/RatingAndTags/RatingAndTags';
-import { LogementDropDown } from '../components/LogementDropDown/LogementDropDown';
 import './styles/logement.scss';
+import { LogementDescription } from '../components/LogementDescription/LogementDescription';
 
 export const Logement = () => {
   const { id } = useParams();
@@ -26,22 +24,7 @@ export const Logement = () => {
       {logement && (
         <>
           <SlideShow images={logement.pictures} />
-          <LogementDetails
-            title={logement.title}
-            location={logement.location}
-            host={logement.host}
-          />
-          <RatingAndTags tags={logement.tags} rating={logement.rating} />
-          <div className="dropdown-container">
-            <LogementDropDown
-              title="Description"
-              content={logement.description}
-            />
-            <LogementDropDown
-              title="Équipements"
-              content={logement.equipments.join(', ')}
-            />
-          </div>
+          <LogementDescription logement={logement} />
         </>
       )}
       <FooterLogo />

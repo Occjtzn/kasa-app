@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import ArrowSvg from '../../assets/Svg/arrow_back.svg';
-import './styles/logement-dropdown.scss';
 
 export const LogementDropDown = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +15,7 @@ export const LogementDropDown = ({ title, content }) => {
         <img src={ArrowSvg} alt="arrow" className="logement-dropdown-icon" />
       </div>
       <div className={`logement-dropdown-frame ${isOpen ? 'open' : ''}`}>
-        {content}
+        <p>{content}</p>
       </div>
     </div>
   );

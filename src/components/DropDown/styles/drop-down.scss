@@ -1,63 +1,98 @@
+/* Conteneur global */
 .dropdown-global-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1240px;
+  width: 100%;
   border-radius: 5px;
   gap: 30px;
+}
+
+/* Section de chaque dropdown */
+.dropdown-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1240px;
+  width: 100%;
   margin-bottom: 30px;
 }
 
-.dropdown-section {
-  display: flex;
-  width: 1023px;
-  flex-direction: column;
-}
-
+/* Barre supérieure du dropdown (cliquable) */
 .dropdown-topbar {
   display: flex;
-  padding: 10px 20px 10px 15px;
-  background-color: #ff6060;
-  width: 100%;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #ff6060;
   border-radius: 5px;
+  box-sizing: border-box;
   cursor: pointer;
   position: relative;
 }
 
+/* Titre du dropdown */
 .dropdown-title {
   color: #fff;
   font-size: 24px;
-  font-style: normal;
   font-weight: 700;
   line-height: 142.6%;
 }
 
+/* Conteneur de contenu (caché par défaut) */
 .dropdown-frame {
-  height: 0;
-  padding: 0 20px;
-  width: 1018px;
-  border-radius: 0 0 5px 5px;
-  background: #f6f6f6;
+  width: 100%;
+  max-height: 0;
+  padding: 0 20px; /* Masque le padding vertical par défaut */
+  background-color: #f6f6f6;
   font-size: 18px;
-  font-style: normal;
   font-weight: 400;
-  line-height: 142.6%;
+  border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
   overflow: hidden;
   transition:
-    height 0.5s ease,
-    padding 0.5s ease;
+    max-height 0.5s ease-in-out,
+    /* Transition fluide pour max-height */ padding 0.5s ease-in-out; /* Transition fluide pour le padding */
 }
 
-.dropdown-section.open .dropdown-frame {
-  height: auto;
-  padding: 20px 20px;
-}
-
+/* Icône du dropdown */
 .dropdown-icon {
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease; /* Animation de rotation fluide */
+}
+
+/* État ouvert du dropdown */
+.dropdown-section.open .dropdown-frame {
+  max-height: 500px; /* Ajustable selon le contenu */
+  padding: 20px; /* Ajout du padding vertical lors de l'ouverture */
 }
 
 .dropdown-section.open .dropdown-icon {
-  transform: rotate(-180deg);
+  transform: rotate(-180deg); /* Rotation de l'icône lors de l'ouverture */
+}
+
+/* État fermé du dropdown */
+.dropdown-section:not(.open) .dropdown-frame {
+  max-height: 0; /* Cache le contenu */
+  padding: 0 20px; /* Masque le padding vertical lors du repli */
+}
+
+/* Responsive : écrans plus petits */
+@media screen and (max-width: 767.9px) {
+  .dropdown-global-container {
+    max-width: 767.9px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0px;
+  }
+
+  .dropdown-title {
+    font-size: 17px;
+  }
+
+  .dropdown-frame {
+    font-size: 12px;
+  }
 }
