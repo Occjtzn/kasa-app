@@ -22,7 +22,11 @@ export const SlideShow = ({ images }) => {
           <img src={PrevVector} alt="Previous" className="previous-icon" />
         </button>
       )}
-      <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
+      <img
+        className="slide-show-img"
+        src={images[currentIndex]}
+        alt={`Slide ${currentIndex + 1}`}
+      />
       {totalImages > 1 && (
         <button className="next-button" onClick={nextSlide}>
           <img src={NextVector} alt="Next" className="next-icon" />

@@ -5,7 +5,7 @@
   overflow: hidden;
   margin-bottom: 30px;
 
-  img {
+  .slide-show-img {
     width: 100%;
     max-height: 415px;
     object-fit: cover;
@@ -17,6 +17,7 @@
 .next-button {
   position: absolute;
   top: 40%;
+  transform: translateY(-10%);
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -27,15 +28,15 @@
 }
 
 .prev-button {
-  left: 10px;
+  left: -25px;
   width: 96px;
-  height: 120px;
+  height: 115px;
 }
 
 .next-button {
-  right: 10px;
+  right: -25px;
   width: 96px;
-  height: 120px;
+  height: 115px;
 }
 
 .prev-button img,
@@ -58,15 +59,19 @@
     max-width: 767.9px;
     margin-bottom: 0;
 
-    img {
+    .slide-show-img {
       max-height: 250px;
-      height: auto;
+      height: 250px;
     }
   }
 
-  .prev-button,
-  .next-button {
-    width: 45px;
-    height: 45px;
+  .prev-button img,
+  .next-button img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .slide-count {
+    display: none;
   }
 }
