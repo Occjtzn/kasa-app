@@ -1,11 +1,11 @@
-import HeaderImage from '../../assets/Pictures/header-img.webp';
+import React from 'react';
 import './styles/header.scss';
 
-export const HeaderLogo = () => {
+export const Header = ({ imageHeader, title }) => {
   return (
     <div className="header-container">
-      <img className="header-img" src={HeaderImage} alt="Header-Logo" />
-      <h2 className="header-title">Chez vous, partout et ailleurs</h2>
+      <img className="header-img" src={imageHeader} alt="Header" />
+      {title && <h2 className="header-title">{title}</h2>}
     </div>
   );
 };

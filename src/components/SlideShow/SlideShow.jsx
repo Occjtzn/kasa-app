@@ -32,9 +32,11 @@ export const SlideShow = ({ images }) => {
           <img src={NextVector} alt="Next" className="next-icon" />
         </button>
       )}
-      <div className="slide-count">
-        {currentIndex + 1} / {totalImages}
-      </div>
+      {totalImages > 1 && (
+        <div className="slide-count">
+          {currentIndex + 1} / {totalImages}
+        </div>
+      )}
     </div>
   );
 };
