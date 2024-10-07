@@ -3,10 +3,14 @@ import ArrowSvg from '../../assets/Svg/arrow_back.svg';
 import './styles/drop-down.scss';
 
 export const Dropdown = ({ items, type = 'global' }) => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndexes, setOpenIndexes] = useState([]);
 
   const handleToggle = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+    if (openIndexes.includes(index)) {
+      setOpenIndexes(openIndexes.filter((i) => i !== index));
+    } else {
+      setOpenIndexes([...openIndexes, index]);
+    }
   };
 
   return (
@@ -16,7 +20,7 @@ export const Dropdown = ({ items, type = 'global' }) => {
       {items.map((item, index) => (
         <div
           key={index}
-          className={`${type === 'global' ? 'dropdown-section' : 'logement-dropdown'} ${openIndex === index ? 'open' : ''}`}
+          className={`${type === 'global' ? 'dropdown-section' : 'logement-dropdown'} ${openIndexes.includes(index) ? 'open' : ''}`}
         >
           <div
             className={`${type === 'global' ? 'dropdown-topbar' : 'logement-dropdown-topbar'}`}
@@ -25,13 +29,15 @@ export const Dropdown = ({ items, type = 'global' }) => {
             <span className="dropdown-title">{item.title}</span>
             <img src={ArrowSvg} alt="arrow" className="dropdown-icon" />
           </div>
-          {openIndex === index && (
-            <div
-              className={`${type === 'global' ? 'dropdown-frame' : 'logement-dropdown-frame'}`}
-            >
-              {item.content}
-            </div>
-          )}
+          <div
+            className={`${type === 'global' ? 'dropdown-frame' : 'logement-dropdown-frame'}`}
+          >
+            <ul>
+              {item.content.split(', ').map((listItem, i) => (
+                <li key={i}>{listItem}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       ))}
     </div>

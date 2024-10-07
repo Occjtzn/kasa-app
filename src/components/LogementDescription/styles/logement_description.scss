@@ -3,7 +3,6 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 1240px;
 }
 
 /* Détails du logement */
@@ -85,14 +84,6 @@
 
 .rating .star-picture {
   width: 24px;
-}
-
-/* Conteneur pour les dropdowns */
-.dropdown-container {
-  display: flex;
-  gap: 76px;
-  width: 100%;
-  max-width: 1240px;
 }
 
 /* Responsiveness : pour les écrans de moins de 768px */

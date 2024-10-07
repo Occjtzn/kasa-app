@@ -7,7 +7,6 @@
   img {
     position: relative;
     width: 100%;
-    max-width: 1240px;
     height: 223px;
     object-fit: cover;
     border-radius: 25px;
@@ -26,9 +25,8 @@
 
 @media screen and (max-width: 767.9px) {
   .header-container {
-    margin: 0;
+    margin-bottom: 25px;
   }
-
   .header-title {
     font-size: 24px;
   }

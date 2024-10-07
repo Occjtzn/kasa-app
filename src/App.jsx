@@ -10,14 +10,16 @@ import './style/app.scss';
 function App() {
   return (
     <Router>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/logement/:id" element={<Logement />} />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-      <FooterLogo />
+      <div className="page-wrapper">
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/logement/:id" element={<Logement />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+        <FooterLogo />
+      </div>
     </Router>
   );
 }
